@@ -225,7 +225,6 @@ for ($row=0; $row<4; $row++)
 # Cercar un element en una matriu fent ús de in_array. Torna si el trobes o no. 
 # Fer dues versions una amb el foreach que recorr les files i l’altra amb array_merge(...$matriu) que el que fa és convertir una array_multidimensional en unidimensional. 
 
-
 $matriu = array(
     array(1, 2, 3),
     array(4, 5, 6),
