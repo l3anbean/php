@@ -195,3 +195,89 @@ print_r($num);
 # Si un alumne en duu de primer ha d’aparèixer a les dues llistes.
 
 ?>
+
+<?php
+# Sumar tots els elements d’una matriu de nombres i compta quants d’elements té La matriu és de dues dimensions de la mateixa longitud.
+$matriu = array (
+    array(1, 2, 3),
+    array(4, 5, 6),
+    array(7, 8, 9)
+);
+for ($i=0; $i< count($matriu[0]); $i++) {
+$colum_act = array_column($matriu, $i);
+$sum_actual = array_sum($colum_act);
+$total_sum = $total_sum + $sum_actual;
+$total_elem = $total_elem + count($colum_act);
+}
+echo "La suma dels elements es: $total_sum <br>";
+echo "El total d'elemts de matriu es: $total_elem";
+var_dump(array_map(max,$i));
+
+?>
+
+<?php
+
+for ($row=0; $row<4; $row++)
+    for($col=0, $col<3; )
+?>
+
+<?php
+# Cercar un element en una matriu fent ús de in_array. Torna si el trobes o no. 
+# Fer dues versions una amb el foreach que recorr les files i l’altra amb array_merge(...$matriu) que el que fa és convertir una array_multidimensional en unidimensional. 
+
+
+$matriu = array(
+    array(1, 2, 3),
+    array(4, 5, 6),
+    array(7, 8, 9)
+);
+
+$elem = 5;
+$trob = false;
+
+foreach ($matriu as $fila) {
+    if (in_array($elem, $fila)) {
+        $trob = true;
+        break;
+    }
+}
+
+if ($trob) {
+    echo "S'ha trobat l'element $elem dins la matriu.";
+} else {
+    echo "no s'ha trobat l'element $elem dins la matriu.";
+}
+
+$matrix = array(
+    array(1, 2, 3),
+    array(4, 5, 6),
+    array(7, 8, 9)
+);
+
+$searchElement = 5;
+
+$mergedMatrix = array_merge(...$matrix);
+
+if (in_array($searchElement, $mergedMatrix)) {
+    echo "Element found in the matrix.";
+} else {
+    echo "Element not found in the matrix.";
+}
+
+
+$matrix = array(
+    array(1, 2, 3),
+    array(4, 5, 6),
+    array(7, 8, 9)
+);
+
+$searchElement = 5;
+
+$mergedMatrix = array_merge(...$matrix);
+
+if (in_array($searchElement, $mergedMatrix)) {
+    echo "S'ha trobat l'elemnt $searchElement dins la matriu <br>";
+} else {
+    echo "No s'ha trobat l'elemnt $searchElement dins la matriu";
+}
+?>
