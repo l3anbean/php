@@ -130,3 +130,68 @@ foreach ($uniqueArray as $element) {
     echo "$element ";
 }
 ?>
+
+<?php
+# Imprimir quants números positius, negatius i zeros hi ha en l’array.
+
+$num = array();
+$positiveCount = 0;
+$negativeCount = 0;
+$zeroCount = 0;
+
+for ($i = 0; $i < 10; $i++) { 
+    $num[$i] = rand(-10, 10);
+    echo "$num[$i]";
+    echo "<br>";
+
+    if ($num[$i] > 0) {
+        $positiveCount++;
+    } elseif ($num[$i] < 0) {
+        $negativeCount++;
+    } else {
+        $zeroCount++;
+    }
+}
+
+echo "Nombres positius: $positiveCount<br>";
+echo "Nombres negatius: $negativeCount<br>";
+echo "Zeros: $zeroCount<br>";
+?>
+
+<?php
+# Afegeix 2 elements al final de l’array.
+$num = array();
+for ($i = 0; $i < 10; $i++) { 
+    $num[$i] = rand(1, 20);
+    echo "$num[$i]";
+    echo "<br>";
+}
+
+array_push($num, 21, 22);
+
+echo "Array amb push:<br>";
+print_r($num);
+?>
+
+<?php
+# Elimina aquests 2 anteriors elements.
+$num = array();
+for ($i = 0; $i < 10; $i++) { 
+    $num[$i] = rand(1, 20);
+    echo "$num[$i]";
+    echo "<br>";
+}
+
+array_pop($num);
+array_pop($num);
+
+echo "Array amb valors adicionals elminiats:<br>";
+print_r($num);
+?>
+
+<?php
+# Practica amb array_diff, array_intersect, array_merge. 
+# Per a tal crea dues array, una amb el nom dels alumnes que fan IFC31A i l’altre amb els nom dels alumnes que fan IFC31B. 
+# Si un alumne en duu de primer ha d’aparèixer a les dues llistes.
+
+?>
