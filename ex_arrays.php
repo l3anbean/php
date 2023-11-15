@@ -280,3 +280,79 @@ if (in_array($searchElement, $mergedMatrix)) {
     echo "No s'ha trobat l'elemnt $searchElement dins la matriu";
 }
 ?>
+
+
+#
+#
+#
+
+<?php
+# Crea un array associatiu que emmagatzemi el stock de le següents fruites: poma(9), taronja(25), llimona(5), pera(8), plàtan(12), pinya(3), meló(4), síndria(5), albercoc(7) i maduixa(14)
+$arr = ["poma" => 9, "taronja" => 25, "llimona" => 5, "pera" => 8, "platan" => 12, "pinya" => 3, "melo" => 4, "sindria" => 5, "albercoc" => 7, "maduixa" => 14];
+print_r($arr);
+?>
+
+<?php
+# Mostra el stock de cada fruita amb el format:
+#	poma: 10
+#	taronja: 25
+#	llimona: 5
+$arr = ["poma" => 9, "taronja" => 25, "llimona" => 5, "pera" => 8, "platan" => 12, "pinya" => 3, "melo" => 4, "sindria" => 5, "albercoc" => 7, "maduixa" => 14];
+foreach ($arr as $fruita => $stock) {
+    echo $fruita . ": " . $stock . "\n";
+    echo "<br>";
+}
+
+?>
+
+<?php
+# Afegeix 10 mangos al stock de fruites
+$arr = ["poma" => 9, "taronja" => 25, "llimona" => 5, "pera" => 8, "platan" => 12, "pinya" => 3, "melo" => 4, "sindria" => 5, "albercoc" => 7, "maduixa" => 14];
+$arr["mango"] = 10;
+
+foreach ($arr as $fruita => $stock) {
+    echo $fruita . ": " . $stock . "\n";
+    echo "<br>";
+}
+
+?>
+
+<?php
+# Duplica el stock de cada fruita
+$arr = ["poma" => 9, "taronja" => 25, "llimona" => 5, "pera" => 8, "platan" => 12, "pinya" => 3, "melo" => 4, "sindria" => 5, "albercoc" => 7, "maduixa" => 14];
+$arr["mango"] = 10;
+foreach ($arr as $fruita => $stock) {
+    $arr[$fruita] = $stock *2;
+}
+foreach ($arr as $fruita => $stock) {
+    print_r($fruita . ": " . $stock . "\n");
+    echo "<br>";
+}
+?>
+
+<?php
+# Ordena l’array associatiu de fruites per nom de manera ascendent i descendent (funcions ksort, krsort
+$arr = ["poma" => 9, "taronja" => 25, "llimona" => 5, "pera" => 8, "platan" => 12, "pinya" => 3, "melo" => 4, "sindria" => 5, "albercoc" => 7, "maduixa" => 14];
+$arr["mango"] = 10;
+# ksort($arr);
+krsort($arr);
+foreach ($arr as $fruita => $stock) {
+    echo $fruita . ": " . $stock . "\n";
+    echo "<br>";
+}
+
+?>
+
+<?php
+# Ordena l’array associatiu de fruites per stock de manera ascendent i descendent (funcions asort, arsort)
+$arr = ["poma" => 9, "taronja" => 25, "llimona" => 5, "pera" => 8, "platan" => 12, "pinya" => 3, "melo" => 4, "sindria" => 5, "albercoc" => 7, "maduixa" => 14];
+$arr["mango"] = 10;
+asort($arr, function ($a, $b) {
+    return $a <=> $b;
+});
+foreach ($arr as $fruita => $stock) {
+    echo $fruita . ": " . $stock . "\n";
+    echo "<br>";
+}
+
+?>
